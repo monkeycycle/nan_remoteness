@@ -1,0 +1,129 @@
+---
+output:
+  html_document:
+    toc: yes
+    theme: spacelab
+    number_sections: no
+    df_print: kable
+    code_folding: show
+---
+
+```{r setup_config, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="hide"}
+
+if (!require('devtools')) install.packages('devtools'); library('devtools')
+if (!require('upstartr')) install.packages('upstartr'); library('upstartr')
+
+run_config()
+
+source(dir_src("functions.R"), local = knitr::knit_global())
+# source(dir_src("finalize_plot.R"), local = knitr::knit_global())
+# source(dir_src("theme.R"), local = knitr::knit_global())
+
+# prevent Scientific Notation globally
+options(scipen=999)
+```
+
+---
+title: "`r getOption('startr.title')`"
+author: '`r getOption('startr.author')`'
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+---
+
+```{r run_base_code, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="hide"}
+
+run_process()
+run_analyze()
+run_visualize()
+```
+
+------------------------------------------------------------------------
+
+## Data
+
+### band_populations
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+# 
+
+cat(str(band_populations))
+head(band_populations)
+
+```
+
+### indigenous_students_regular_school_programs
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+# 
+
+cat(str(indigenous_students_regular_school_programs))
+head(indigenous_students_regular_school_programs)
+
+```
+
+### remote_index
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+# 
+
+cat(str(remote_index))
+head(remote_index)
+
+```
+
+### amc_regional_funding_model
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+# 
+
+cat(str(amc_regional_funding_model))
+head(amc_regional_funding_model)
+
+```
+
+### amc_regional_funding_model_nopercap
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+# 
+
+cat(str(amc_regional_funding_model_nopercap))
+head(amc_regional_funding_model_nopercap)
+
+```
+
+
+
+### FNSS_regional_funding_model_summary
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+# 
+
+cat(str(FNSS_regional_funding_model_summary))
+head(FNSS_regional_funding_model_summary)
+
+```
+
+
+
+### FNSS_regional_funding_model_summary_per_capita
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+# 
+
+cat(str(FNSS_regional_funding_model_summary_per_capita))
+head(FNSS_regional_funding_model_summary_per_capita)
+
+```
+
+### mb_fn_schools
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+# 
+
+cat(str(mb_fn_schools))
+head(mb_fn_schools)
+
+```
+
+
+
+
