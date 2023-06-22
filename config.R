@@ -12,11 +12,11 @@ initialize_startr(
   should_timestamp_output_files = FALSE,
   packages = c(
     'tidyverse', 'glue', 'lubridate', 'readxl',
-    'xlsx',
     'feather', 'scales', 'knitr', 'writexl',
     'janitor', 'zoo', 'DT',
     'ggplot2', 'stargazer', 'modelsummary',
-    'gtsummary', 'huxtable', 'tidymodels'
+    'gtsummary', 'huxtable', 'tidymodels', 'stargazer',
+    'AER', 'haven', 'dplyr', 'car'
     # 'sf',
     # 'rvest',
     # 'gganimate', 'tgamtheme',
@@ -26,7 +26,7 @@ initialize_startr(
 
 
 # Source data files and URLs
-# https://fnp-ppn.aadnc-aandc.gc.ca/fnp/Main/Search/FNPopulation.aspx?BAND_NUMBER=###&lang=eng
+# https://fnp-ppn.aadnc-aandc.gc.ca/fnp/Main/Search/FNPopulation.aspx?BAND_NUMBER=271&lang=eng
 band_populations.raw.file <- dir_data_raw('band_populations.xlsx')
 
 # https://www.statcan.gc.ca/en/census/census-engagement/community-supporter/indigenous-peoples
@@ -48,4 +48,6 @@ FNSS_regional_funding_model_summary.raw.file <- dir_data_raw('FNSS-regional-fund
 
 mb_fn_schools.raw.file <- dir_data_raw('mb-fn-schools.xlsx')
 
+
+cost_ratio.xlsx.raw.file <- dir_data_raw('cost_ratio.xlsx')
 

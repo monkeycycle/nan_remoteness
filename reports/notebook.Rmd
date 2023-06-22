@@ -127,3 +127,24 @@ head(mb_fn_schools)
 
 
 
+### cost_ratio
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+# 
+
+cat(str(cost_ratio))
+head(cost_ratio)
+
+```
+
+
+### df_for_cost_ratio_model
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+# 
+
+cat(str(df_for_cost_ratio_model))
+head(df_for_cost_ratio_model)
+
+```
+
