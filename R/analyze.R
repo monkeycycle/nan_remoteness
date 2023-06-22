@@ -26,11 +26,47 @@ df_for_cost_ratio_model <- cost_ratio %>%
   left_join(band_populations, by = c('first_nation' = 'first_nation_key')) %>%
   left_join(mb_fn_schools, by = c('first_nation' = 'first_nation_key')) %>%
   left_join(remote_index, by = c('first_nation' = 'first_nation_key')) %>%
+  left_join(FNSS_regional_funding_model_summary %>% select(first_nation, enrollment, first_nation_key), by = c('first_nation' = 'first_nation_key')) %>%
+    mutate(
+      population_ratio_staff = staff_population / enrollment,
+      population_ratio_teachers = classroom_teachers / enrollment
+  ) %>%
   select(
-    -first_nation.y,
-    -first_nation.y.y,
-    -source_url
+
+    first_nation,
+    band_number,
+    u19_population,
+    total_population,
+    percentage_u19,
+    school,
+    grades,
+    enrollment,
+    classroom_teachers,
+    staff_population,
+    population_ratio_staff,
+    population_ratio_teachers,
+    data_year,
+
+    non_fte_no_per_capita,
+    fte_no_per_capita,
+    non_fte_with_per_capita,
+    fte_with_per_capita,
+    index_of_remoteness,
+
+    cs_dname,
+    cs_dtype,
+    cs_dpop2021
   )
+
+# Split Apply Combine to deal with multiple Brokenhead rows and missing data in some.
+df_for_cost_ratio_model_no_brokenhead <- df_for_cost_ratio_model %>% filter(first_nation != 'Brokenhead')
+df_for_cost_ratio_model_brokenhead <- df_for_cost_ratio_model %>% filter(first_nation == 'Brokenhead') %>%
+  filter(complete.cases(.)) %>%
+  head(1)
+
+df_for_cost_ratio_model <- rbind(df_for_cost_ratio_model_no_brokenhead,
+                                 df_for_cost_ratio_model_brokenhead)
+
 
 write_xlsx(df_for_cost_ratio_model, dir_data_out('df_for_cost_ratio_model.xlsx'))
 

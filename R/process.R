@@ -20,7 +20,6 @@ band_populations.raw <- read_xlsx(band_populations.raw.file) %>%
     source_url
   ) %>%
   mutate(
-    first_nation_key = 'FOO',
     first_nation_key = case_when(
       first_nation == 'Fox Lake' ~ 'Fox Lake',
       first_nation == 'Lake Manitoba' ~ 'Lake Manitoba',
@@ -68,6 +67,11 @@ remote_index.raw <- read_csv(remote_index.raw.file) %>%
       cs_dname == 'Keeseekoowenin 61' ~ 'Keeseekoowenin',
       cs_dname == 'Brokenhead 4' ~ 'Brokenhead',
       cs_dname == 'Grahamdale' ~ 'Lake St. Martin',
+      cs_dname == 'Fairford 50' ~ 'Pinaymootang',
+      cs_dname == 'Dog Creek 46' ~ 'Lake Manitoba',
+      cs_dname == 'York Landing' ~ 'York Factory',
+
+
 
       # cs_dname == 'Brokenhead Ojibway First Nation' ~ 'Brokenhead',
       # cs_dname == 'Dakota Plains Wahpeton Nation' ~ 'Dakota Plains',
@@ -129,6 +133,26 @@ FNSS_regional_funding_model_summary.raw <- read_xlsx(FNSS_regional_funding_model
   clean_names() %>%
   select(
     -x31, -x32, -x37, -x38, -x40, -x41
+  ) %>%
+  filter(
+    first_nation != 'Total'
+  ) %>%
+  mutate(
+    first_nation_key = case_when(
+      first_nation == 'Fox Lake' ~ 'Fox Lake',
+      first_nation == 'Lake Manitoba' ~ 'Lake Manitoba',
+      first_nation == 'Lake St. Martin' ~ 'Lake St. Martin',
+      first_nation == 'Pinaymootang First Nation' ~ 'Pinaymootang',
+      first_nation == 'Roseau River' ~ 'Roseau River',
+      first_nation == 'York Factory' ~ 'York Factory',
+      first_nation == 'Brokenhead Ojibway Nation' ~ 'Brokenhead',
+      first_nation == 'Bloodvein' ~ 'Bloodvein',
+      first_nation == 'Brokenhead' ~ 'Brokenhead',
+      first_nation == 'Dakota Plains' ~ 'Dakota Plains',
+      first_nation == 'Dakota Tipi' ~ 'Dakota Tipi',
+      first_nation == 'Keeseekoowenin' ~ 'Keeseekoowenin',
+      first_nation == 'Pinaymootang' ~ 'Pinaymootang'
+    )
   )
 
 
