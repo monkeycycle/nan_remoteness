@@ -8,7 +8,15 @@ output:
     code_folding: show
 ---
 
-```{r setup_config, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="hide"}
+```{r}
+
+#| label = setup_config
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="hide"
 
 if (!require('devtools')) install.packages('devtools'); library('devtools')
 if (!require('upstartr')) install.packages('upstartr'); library('upstartr')
@@ -24,12 +32,23 @@ options(scipen=999)
 ```
 
 ---
-title: "`r getOption('startr.title')`"
-author: '`r getOption('startr.author')`'
-date: "`r format(Sys.Date(), '%B %d, %Y')`"
+<!-- title: "`r getOption('startr.title')`" -->
+<!-- author: '`r getOption('startr.author')`' -->
+<!-- date: "`r format(Sys.Date(), '%B %d, %Y')`" -->
 ---
 
-```{r run_base_code, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="hide", fig.show='hide'}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="hide"
+#| fig.show='hide'
+
 
 run_process()
 run_analyze()
@@ -59,7 +78,16 @@ Adding the staff ratio improves the R squared values but decreases the F stat.
  which was dropped because of the population data) because of missing data.
  (need to spend more time thinking about this)
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(lin_mod_1, lin_mod_2, lin_mod_3),
           type = 'text',
@@ -73,7 +101,17 @@ stargazer(list(lin_mod_1, lin_mod_2, lin_mod_3),
 
 Pretty similar to linear model observations
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
+
 
 
 stargazer(list(log_mod_1, log_mod_2, log_mod_3),
@@ -88,7 +126,16 @@ stargazer(list(log_mod_1, log_mod_2, log_mod_3),
 
 When comparing the linear and logged models, the linear models fit better than the logged models.
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(lin_mod_2, log_mod_2, lin_mod_3, log_mod_3),
           type = 'text',
@@ -102,7 +149,16 @@ stargazer(list(lin_mod_2, log_mod_2, lin_mod_3, log_mod_3),
 
 The model with the remoteness index and the under 19 population has the best fit out of the three models.
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(lin_mod_npc_1, lin_mod_npc_2, lin_mod_npc_3),
           type = 'text',
@@ -113,7 +169,16 @@ stargazer(list(lin_mod_npc_1, lin_mod_npc_2, lin_mod_npc_3),
 
 ### Linear with per capita spending removed
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(lin_mod_2, lin_mod_npc_2, lin_mod_3, lin_mod_npc_3),
           type = 'text',
@@ -126,7 +191,16 @@ stargazer(list(lin_mod_2, lin_mod_npc_2, lin_mod_3, lin_mod_npc_3),
 
 Similar to the linear models, it looks like the model with the remoteness index and the under 19 population has the best fit out of the three models.
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(log_mod_npc_1, log_mod_npc_2, log_mod_npc_3),
           type = 'text',
@@ -138,7 +212,16 @@ stargazer(list(log_mod_npc_1, log_mod_npc_2, log_mod_npc_3),
 
 ### Logged models with per capita spending and without
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(log_mod_2, log_mod_npc_2, log_mod_3, log_mod_npc_3),
           type = 'text',
@@ -152,7 +235,16 @@ stargazer(list(log_mod_2, log_mod_npc_2, log_mod_3, log_mod_npc_3),
 Seems like when looking at the cost ratio without per capita spending, the population ratio doesn't improve the model at all and that logging this data does seem to provide a better fit to the data
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(lin_mod_npc_2, log_mod_npc_2, lin_mod_npc_3, log_mod_npc_3),
           type = 'text',
@@ -167,7 +259,16 @@ stargazer(list(lin_mod_npc_2, log_mod_npc_2, lin_mod_npc_3, log_mod_npc_3),
 
 When using teacher ratio, model 2 (without population ratio) has the best fit
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(lin_mod_1, lin_mod_2, lin_mod_tr_3),
           type = 'text',
@@ -183,7 +284,16 @@ stargazer(list(lin_mod_1, lin_mod_2, lin_mod_tr_3),
 Using staff ratio rather than teacher ratio has a better fit, that being said adding staff ratio doesn't improve the fit either.
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(lin_mod_2, lin_mod_3, lin_mod_tr_3),
           type = 'text',
@@ -198,7 +308,16 @@ stargazer(list(lin_mod_2, lin_mod_3, lin_mod_tr_3),
 
 Has a better R squared value when population ratio is included but this also decreases the F statistic.
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(log_mod_1, log_mod_2, log_mod_tr_3),
           type = 'text',
@@ -213,7 +332,16 @@ Similar to the linear model comparing the population ratio additions, adding the
 
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(log_mod_2, log_mod_3, log_mod_tr_3),
           type = 'text',
@@ -228,7 +356,16 @@ stargazer(list(log_mod_2, log_mod_3, log_mod_tr_3),
 When using the teacher ratio as the population ratio, adding that variable decreases the fit for both logged and linear versions.
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 stargazer(list(lin_mod_2, log_mod_2, lin_mod_tr_3, log_mod_tr_3),
           type = 'text',
@@ -244,7 +381,16 @@ stargazer(list(lin_mod_2, log_mod_2, lin_mod_tr_3, log_mod_tr_3),
 
 ## Residual plots
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 plot(lin_mod_1_plot)
 
@@ -282,7 +428,15 @@ plot(lin_mod_npc_3_plot)
 
 ### band_populations
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 
 cat(str(band_populations))
@@ -292,8 +446,16 @@ head(band_populations)
 
 ### indigenous_students_regular_school_programs
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
-# 
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
+
 
 cat(str(indigenous_students_regular_school_programs))
 head(indigenous_students_regular_school_programs)
@@ -302,8 +464,16 @@ head(indigenous_students_regular_school_programs)
 
 ### remote_index
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
-# 
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
+
 
 cat(str(remote_index))
 head(remote_index)
@@ -312,8 +482,16 @@ head(remote_index)
 
 ### amc_regional_funding_model
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
-# 
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
+
 
 cat(str(amc_regional_funding_model))
 head(amc_regional_funding_model)
@@ -322,8 +500,16 @@ head(amc_regional_funding_model)
 
 ### amc_regional_funding_model_nopercap
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
-# 
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
+
 
 cat(str(amc_regional_funding_model_nopercap))
 head(amc_regional_funding_model_nopercap)
@@ -334,8 +520,16 @@ head(amc_regional_funding_model_nopercap)
 
 ### FNSS_regional_funding_model_summary
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
-# 
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
+
 
 cat(str(FNSS_regional_funding_model_summary))
 head(FNSS_regional_funding_model_summary)
@@ -346,8 +540,15 @@ head(FNSS_regional_funding_model_summary)
 
 ### FNSS_regional_funding_model_summary_per_capita
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
-# 
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
 
 cat(str(FNSS_regional_funding_model_summary_per_capita))
 head(FNSS_regional_funding_model_summary_per_capita)
@@ -356,8 +557,16 @@ head(FNSS_regional_funding_model_summary_per_capita)
 
 ### mb_fn_schools
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
-# 
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
+
 
 cat(str(mb_fn_schools))
 head(mb_fn_schools)
@@ -369,8 +578,16 @@ head(mb_fn_schools)
 
 ### cost_ratio
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
-# 
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
+
 
 cat(str(cost_ratio))
 head(cost_ratio)
@@ -380,8 +597,16 @@ head(cost_ratio)
 
 ### df_for_cost_ratio_model
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
-# 
+```{r}
+
+#| label = run_base_code
+#| echo = FALSE
+#| message=FALSE
+#| warning=FALSE
+#| fig.width=8.66
+#| fig.height=8.66
+#| results="as-is"
+
 
 cat(str(df_for_cost_ratio_model))
 head(df_for_cost_ratio_model)
