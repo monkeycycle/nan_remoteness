@@ -300,15 +300,26 @@ head(indigenous_students_regular_school_programs)
 
 ```
 
-### remote_index
+### remote_index_bcm
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
 # 
 
-cat(str(remote_index))
-head(remote_index)
+cat(str(remote_index_bcm))
+head(remote_index_bcm)
 
 ```
+
+### remote_index_statcan
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8.66, fig.height=8.66, results="as-is"}
+# 
+
+cat(str(remote_index_statcan))
+head(remote_index_statcan)
+
+```
+
 
 ### amc_regional_funding_model
 
